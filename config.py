@@ -1,4 +1,6 @@
 #Variables that contains the user credentials to access Twitter API
+import datetime
+
 access_token = "765129173140725760-281bSWa7dSOCxp9w5hWYUrHFRFplQkL"
 access_token_secret = "roa9zDpx4LwNXLFyMkHPQggBvzsBgkSM3igXGDNBcWyTn"
 consumer_key = "RtEMttVUDINmULh9FlYhpUfsB"
@@ -18,10 +20,12 @@ colors = [('rgb(102, 204, 0)'), ('rgb(35, 145, 254)'), ('rgb(255, 153, 51)'), ('
 
 start_date='2016-10-18'
 
-dailyGraphicsTitle='Presidential Candidates Daily Activities'
-dailyGraphicsXaxis=''
-dailyGraphicsYaxis='Number of tweets'
+yesterday = (datetime.datetime.now() - datetime.timedelta(1)).strftime("%Y-%m-%d")
 
-monthlyGraphicsTitle='Presidential Candidates Monthly Activities'
+dailyGraphicsTitle='Actividad en Twitter de Candidatos Presidenciales. Fecha: %s' % yesterday
+dailyGraphicsXaxis=''
+dailyGraphicsYaxis='N tweets'
+
+monthlyGraphicsTitle='Actividad en Twitter de Candidatos Presidenciales'
 monthlyGraphicsXaxis=''
 monthlyGraphicsYaxis='Number of tweets'
