@@ -24,8 +24,8 @@ yesterday = (datetime.datetime.now() - datetime.timedelta(1)).strftime("%Y-%m-%d
 
 dailyGraphicsTitle='Actividad en Twitter de Candidatos Presidenciales. Fecha: %s' % yesterday
 dailyGraphicsXaxis=''
-dailyGraphicsYaxis='N tweets'
+dailyGraphicsYaxis='Número de Tweets'
 
 monthlyGraphicsTitle='Actividad en Twitter de Candidatos Presidenciales'
 monthlyGraphicsXaxis=''
-monthlyGraphicsYaxis='Number of tweets'
+monthlyGraphicsYaxis='Número de Tweets'
