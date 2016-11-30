@@ -21,7 +21,7 @@ vicepre_candidate_names = ['Ramiro Aguilar', 'Mauricio Pozo', 'Andrés Páez', '
 colors = [('rgb(102, 204, 0)'), ('rgb(35, 145, 254)'), ('rgb(255, 153, 51)'), ('rgb(255, 255, 102)'), ('rgb(255, 102, 255)'),
                        ('rgb(96, 96, 96)'), ('rgb(0, 255, 255)'), ('rgb(0, 0, 255)')]
 
-start_date='2016-11-29'
+start_date='2016-11-20'
 
 yesterday = (datetime.datetime.now() - datetime.timedelta(1)).strftime("%Y-%m-%d")
 
