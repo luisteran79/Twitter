@@ -131,8 +131,8 @@ def read_csv(filename, screen_name):
 
 presidentsData = []
 
-for i, p in enumerate(config.pre_candidate_keywords):
-    presidentsData.append(read_csv('%s_tweets.csv' % p, config.pre_candidate_names[i]))
+for i, p in enumerate(config.vicepre_candidate_keywords):
+    presidentsData.append(read_csv('%s_tweets.csv' % p, config.vicepre_candidate_names[i]))
 
 #get all dates
 dates = []
@@ -151,7 +151,7 @@ while (count < len(presidentsData)):
 
 # Create and style traces/data
 data = []
-for i, row in enumerate(config.pre_candidate_names):
+for i, row in enumerate(config.vicepre_candidate_names):
     data.append(go.Scatter(
         x=dates,
         y=preCandidatesData[i],
@@ -163,7 +163,7 @@ for i, row in enumerate(config.pre_candidate_names):
     )
 
 # Edit the layout
-layout = dict(title=config.monthlyGraphicsTitle,
+layout = dict(title=config.monthlyViceGraphicsTitle,
                 xaxis=dict(title=config.monthlyGraphicsXaxis,
                     rangeselector=dict(
                         buttons=list([
@@ -186,4 +186,4 @@ layout = dict(title=config.monthlyGraphicsTitle,
 
 # Plot and embed in ipython notebook!
 fig = dict(data=data, layout=layout)
-py.plot(fig, filename='presidential-candidates-monthly-report')
+py.plot(fig, filename='vicepresidential-candidates-monthly-report')

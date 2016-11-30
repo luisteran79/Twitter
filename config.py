@@ -10,22 +10,27 @@ consumer_secret = "CHk9H4jWF6hZXQtz2K6POdsZsI8p2UkbbwAnSK0k1VzSXmaSto"
 username='graphics_VAA'
 api_key='hsa2b84ky3'
 
-pre_candidate_keywords = ['CynthiaViteri6', 'daloes10', 'LassoGuillermo', 'Lenin', 'PacoMoncayo', 'pesanteztwof',
-                               'AbAlvaroNoboa', 'PaulOlsen1']
-pre_candidate_names = ['Cynthia Viteri', 'Dalo Bucaram', 'Guillermo Lasso', 'Lenín Moreno Garcés', 'Paco Moncayo G.',
-                       'Washington Pesántez', 'Alvaro Noboa', 'Paul Olsen']
+pre_candidate_keywords = ['daloes10', 'CynthiaViteri6', 'LassoGuillermo', 'IvanEspinelM', 'Lenin', 'PacoMoncayo',
+                               'PZuquilanda', 'pesanteztwof']
+pre_candidate_names = ['Abdalá Bucaram', 'Cynthia Viteri', 'Guillermo Lasso', 'Iván Espinel', 'Lenin Moreno',
+                       'Paco Moncayo', 'Patricio Zuquilanda', 'Washington Pesántez']
+
+vicepre_candidate_keywords = ['ramiroaguilart', 'MauricioPozoEC', 'andrespaezec', 'JorgeGlas', 'MonseBustamant', 'a_alcivar']
+vicepre_candidate_names = ['Ramiro Aguilar', 'Mauricio Pozo', 'Andrés Páez', 'Jorge Glas', 'Monserratt Mustamante', 'Alex Alcivar']
 
 colors = [('rgb(102, 204, 0)'), ('rgb(35, 145, 254)'), ('rgb(255, 153, 51)'), ('rgb(255, 255, 102)'), ('rgb(255, 102, 255)'),
                        ('rgb(96, 96, 96)'), ('rgb(0, 255, 255)'), ('rgb(0, 0, 255)')]
 
-start_date='2016-10-18'
+start_date='2016-11-29'
 
 yesterday = (datetime.datetime.now() - datetime.timedelta(1)).strftime("%Y-%m-%d")
 
 dailyGraphicsTitle='Actividad en Twitter de Candidatos Presidenciales. Fecha: %s' % yesterday
+dailyViceGraphicsTitle='Actividad en Twitter de Candidatos a Vicepresidente. Fecha: %s' % yesterday
 dailyGraphicsXaxis=''
 dailyGraphicsYaxis='Número de Tweets'
 
 monthlyGraphicsTitle='Actividad en Twitter de Candidatos Presidenciales'
+monthlyViceGraphicsTitle='Actividad en Twitter de Candidatos a Vicepresidente'
 monthlyGraphicsXaxis=''
 monthlyGraphicsYaxis='Número de Tweets'
