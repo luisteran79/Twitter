@@ -12,7 +12,7 @@ api_key='hsa2b84ky3'
 
 pre_candidate_keywords = ['daloes10', 'CynthiaViteri6', 'LassoGuillermo', 'IvanEspinelM', 'Lenin', 'PacoMoncayo',
                                'PZuquilanda', 'pesanteztwof']
-pre_candidate_names = ['Abdalá Bucaram', 'Cynthia Viteri', 'Guillermo Lasso', 'Iván Espinel', 'Lenin Moreno',
+pre_candidate_names = ['Dalo Bucaram', 'Cynthia Viteri', 'Guillermo Lasso', 'Iván Espinel', 'Lenin Moreno',
                        'Paco Moncayo', 'Patricio Zuquilanda', 'Washington Pesántez']
 
 vicepre_candidate_keywords = ['ramiroaguilart', 'MauricioPozoEC', 'andrespaezec', 'JorgeGlas', 'MonseBustamant', 'a_alcivar']
