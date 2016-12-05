@@ -125,65 +125,65 @@ def read_csv(filename, screen_name):
                 totalFavorites += int(row['favorite_count'])
                 totalRetweets += int(row['retweet_count'])
                 curDate = datetime.datetime.strptime(row['created_at'], "%Y-%m-%d %H:%M:%S")
-    #print(data)
+    print(data)
     return data
 
-def main():
-    presidentsData = []
 
-    for i, p in enumerate(config.pre_candidate_keywords):
-        presidentsData.append(read_csv('%s_tweets.csv' % p, config.pre_candidate_names[i]))
+presidentsData = []
 
-    #get all dates
-    dates = []
-    for pData in presidentsData[0]:
-        dates.append(pData[0])
+for i, p in enumerate(config.pre_candidate_keywords):
+    presidentsData.append(read_csv('%s_tweets.csv' % p, config.pre_candidate_names[i]))
 
-    #Candidat activities
-    preCandidatesData = []
-    count = 0
-    while (count < len(presidentsData)):
-        data = []
-        for row in presidentsData[count]:
-            data.append(row[5])
-        preCandidatesData.append(data)
-        count += 1
+#get all dates
+dates = []
+for pData in presidentsData[0]:
+    dates.append(pData[0])
 
-    # Create and style traces/data
+#Candidat activities
+preCandidatesData = []
+count = 0
+while (count < len(presidentsData)):
     data = []
-    for i, row in enumerate(config.pre_candidate_names):
-        data.append(go.Scatter(
-            x=dates,
-            y=preCandidatesData[i],
-            name=row,
-            line=dict(
-                color=config.colors[i],
-                width=2)
-            )
+    for row in presidentsData[count]:
+        data.append(row[5])
+    preCandidatesData.append(data)
+    count += 1
+
+# Create and style traces/data
+data = []
+for i, row in enumerate(config.pre_candidate_names):
+    data.append(go.Scatter(
+        x=dates,
+        y=preCandidatesData[i],
+        name=row,
+        line=dict(
+            color=config.colors[i],
+            width=2)
         )
+    )
 
-    # Edit the layout
-    layout = dict(title=config.monthlyGraphicsTitle,
-                    xaxis=dict(title=config.monthlyGraphicsXaxis,
-                        rangeselector=dict(
-                            buttons=list([
-                                dict(count=7,
-                                     label='1 week',
-                                     step='day',
-                                     stepmode='backward'),
-                                dict(count=1,
-                                     label='1 month',
-                                     step='month',
-                                     stepmode='backward'),
-                                dict(step='all')
-                            ])
-                        ),
-                        rangeslider=dict(),
-                        type='date'
+# Edit the layout
+layout = dict(title=config.monthlyGraphicsTitle,
+                xaxis=dict(title=config.monthlyGraphicsXaxis,
+                    rangeselector=dict(
+                        buttons=list([
+                            dict(count=7,
+                                 label='1 week',
+                                 step='day',
+                                 stepmode='backward'),
+                            dict(count=1,
+                                 label='1 month',
+                                 step='month',
+                                 stepmode='backward'),
+                            dict(step='all')
+                        ])
                     ),
-                    yaxis=dict(title=config.monthlyGraphicsYaxis),
-                    )
+                    rangeslider=dict(),
+                    type='date'
+                ),
+                yaxis=dict(title=config.monthlyGraphicsYaxis),
+                )
 
-    # Plot and embed in ipython notebook!
-    fig = dict(data=data, layout=layout)
-    py.plot(fig, filename='presidential-candidates-monthly-report')
+# Plot and embed in ipython notebook!
+fig = dict(data=data, layout=layout)
+py.plot(fig, filename='presidential-candidates-monthly-report')

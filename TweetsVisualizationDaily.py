@@ -31,45 +31,45 @@ def read_csv(filename, _date):
     data.append(totalFavorites)
     return data
 
-def main():
-    presidentsData = []
-    yesterday = (datetime.datetime.now() - datetime.timedelta(1)).strftime("%Y-%m-%d")
-    today = datetime.datetime.now().strftime("%Y-%m-%d")
+presidentsData = []
+yesterday = (datetime.datetime.now() - datetime.timedelta(1)).strftime("%Y-%m-%d")
+today = datetime.datetime.now().strftime("%Y-%m-%d")
 
-    for p in config.pre_candidate_keywords:
-        presidentsData.append(read_csv('%s_tweets.csv' % p, yesterday))
+for p in config.pre_candidate_keywords:
+    presidentsData.append(read_csv('%s_tweets.csv' % p, yesterday))
 
-    numberOfTweets = []
-    numberOfRetweets = []
-    numberOfFavorites = []
-    for p in presidentsData:
-        numberOfTweets.append(p[1])
-        numberOfRetweets.append(p[2])
-        numberOfFavorites.append(p[3])
+print(presidentsData)
+numberOfTweets = []
+numberOfRetweets = []
+numberOfFavorites = []
+for p in presidentsData:
+    numberOfTweets.append(p[1])
+    numberOfRetweets.append(p[2])
+    numberOfFavorites.append(p[3])
 
-    tweets = go.Bar(
-        x=config.pre_candidate_names,
-        y=numberOfTweets,
-        name='Tweets'
-    )
-    retweets = go.Bar(
-        x=config.pre_candidate_names,
-        y=numberOfRetweets,
-        name='Retweets'
-    )
-    favorites = go.Bar(
-        x=config.pre_candidate_names,
-        y=numberOfFavorites,
-        name='Favorites'
-    )
+tweets = go.Bar(
+    x=config.pre_candidate_names,
+    y=numberOfTweets,
+    name='Tweets'
+)
+retweets = go.Bar(
+    x=config.pre_candidate_names,
+    y=numberOfRetweets,
+    name='Retweets'
+)
+favorites = go.Bar(
+    x=config.pre_candidate_names,
+    y=numberOfFavorites,
+    name='Favorites'
+)
 
-    data = [tweets, retweets, favorites]
+data = [tweets, retweets, favorites]
 
-    layout = dict(title=config.dailyGraphicsTitle,
-                  xaxis=dict(title=config.dailyGraphicsXaxis),
-                  yaxis=dict(title=config.dailyGraphicsYaxis),
-                  barmode='stack',
-                  )
+layout = dict(title=config.dailyGraphicsTitle,
+              xaxis=dict(title=config.dailyGraphicsXaxis),
+              yaxis=dict(title=config.dailyGraphicsYaxis),
+              barmode='stack',
+              )
 
-    fig = go.Figure(data=data, layout=layout)
-    py.plot(fig, filename='presidential-candidates-daily-report')
+fig = go.Figure(data=data, layout=layout)
+py.plot(fig, filename='presidential-candidates-daily-report')
