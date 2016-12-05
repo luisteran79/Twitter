@@ -66,7 +66,7 @@ if __name__ == '__main__':
     print(os.getcwd())
 
     preDaily.main()
-    #preMonthly.main()
+    preMonthly.main()
     viceDaily.main()
     #viceMonthly.main()
 
