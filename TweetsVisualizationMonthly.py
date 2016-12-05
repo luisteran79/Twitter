@@ -4,6 +4,7 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 import plotly.tools as tls
 import config
+import os
 
 tls.set_credentials_file(username=config.username, api_key=config.api_key)
 
@@ -131,8 +132,11 @@ def read_csv(filename, screen_name):
 def main():
     presidentsData = []
 
+    os.chdir(os.path.dirname(__file__))
+
     for i, p in enumerate(config.pre_candidate_keywords):
-        presidentsData.append(read_csv('%s_tweets.csv' % p, config.pre_candidate_names[i]))
+        filename = '%s\%s' % (os.getcwd(), p)
+        presidentsData.append(read_csv('%s_tweets.csv' % filename, config.pre_candidate_names[i]))
 
     #get all dates
     dates = []

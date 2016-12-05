@@ -41,7 +41,6 @@ def main():
 
     for p in config.pre_candidate_keywords:
         filename = '%s\%s' % (os.getcwd(),p)
-        print(filename)
         presidentsData.append(read_csv('%s_tweets.csv' % filename, yesterday))
 
     numberOfTweets = []

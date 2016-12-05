@@ -40,7 +40,6 @@ def main():
     os.chdir(os.path.dirname(__file__))
     for p in config.vicepre_candidate_keywords:
         filename = '%s\%s' % (os.getcwd(), p)
-        print(filename)
         presidentsData.append(read_csv('%s_tweets.csv' % filename, yesterday))
 
     numberOfTweets = []

@@ -4,12 +4,10 @@ import os
 import re
 import tweepy
 import csv
-import subprocess
 import TweetsVisualizationDaily as preDaily
 import TweetsVisualizationMonthly as preMonthly
 import VicePreTweetsVisualizationDaily as viceDaily
 import VicePreTweetsVisualizationMonthly as viceMonthly
-import os
 
 #Variables that contains the user credentials to access Twitter API
 import config
@@ -45,7 +43,6 @@ def get_all_tweets(screen_name):
     outtweets = [
         [tweet.id_str, tweet.user.name.encode("utf-8"), screen_name, tweet.created_at, tweet.retweet_count, tweet.favorite_count,
          tweet.text.encode("utf-8")] for tweet in alltweets if yesterday in str(tweet.created_at)]
-    print(outtweets)
     # write the csv
     with open('%s_tweets.csv' % screen_name, 'a', newline='') as f:
         writer = csv.writer(f)
@@ -55,19 +52,18 @@ def get_all_tweets(screen_name):
     pass
 
 if __name__ == '__main__':
-    # pass in the username of the account you want to download
-    #for p in config.pre_candidate_keywords:
-    #    get_all_tweets(p)
-
-    #for p in config.vicepre_candidate_keywords:
-    #    get_all_tweets(p)
-
     os.chdir(os.path.dirname(__file__))
-    print(os.getcwd())
+
+    # pass in the username of the account you want to download
+    for p in config.pre_candidate_keywords:
+        get_all_tweets(p)
+
+    for p in config.vicepre_candidate_keywords:
+        get_all_tweets(p)
 
     preDaily.main()
     preMonthly.main()
     viceDaily.main()
-    #viceMonthly.main()
+    viceMonthly.main()
 
 
