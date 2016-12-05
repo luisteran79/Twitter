@@ -4,6 +4,7 @@ import datetime
 import plotly.plotly as py
 import plotly.graph_objs as go
 import plotly.tools as tls
+import os
 
 import config
 
@@ -36,8 +37,11 @@ def main():
     yesterday = (datetime.datetime.now() - datetime.timedelta(1)).strftime("%Y-%m-%d")
     today = datetime.datetime.now().strftime("%Y-%m-%d")
 
+    os.chdir(os.path.dirname(__file__))
     for p in config.vicepre_candidate_keywords:
-        presidentsData.append(read_csv('%s_tweets.csv' % p, yesterday))
+        filename = '%s\%s' % (os.getcwd(), p)
+        print(filename)
+        presidentsData.append(read_csv('%s_tweets.csv' % filename, yesterday))
 
     numberOfTweets = []
     numberOfRetweets = []
