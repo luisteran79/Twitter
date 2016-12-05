@@ -9,6 +9,7 @@ import TweetsVisualizationDaily as preDaily
 import TweetsVisualizationMonthly as preMonthly
 import VicePreTweetsVisualizationDaily as viceDaily
 import VicePreTweetsVisualizationMonthly as viceMonthly
+import os
 
 #Variables that contains the user credentials to access Twitter API
 import config
@@ -60,9 +61,13 @@ if __name__ == '__main__':
 
     #for p in config.vicepre_candidate_keywords:
     #    get_all_tweets(p)
+
+    os.chdir(os.path.dirname(__file__))
+    print(os.getcwd())
+
     preDaily.main()
-    preMonthly.main()
+    #preMonthly.main()
     viceDaily.main()
-    viceMonthly.main()
+    #viceMonthly.main()
 
 
