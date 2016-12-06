@@ -7,8 +7,12 @@ consumer_key = "RtEMttVUDINmULh9FlYhpUfsB"
 consumer_secret = "CHk9H4jWF6hZXQtz2K6POdsZsI8p2UkbbwAnSK0k1VzSXmaSto"
 
 # username and API key to access Plotly in order to show the graphics
-username='graphics_VAA'
-api_key='hsa2b84ky3'
+
+#username='graphics_VAA'
+#api_key='hsa2b84ky3'
+
+username='nguyenm'
+api_key='0d2bs1bakm'
 
 pre_candidate_keywords = ['daloes10', 'CynthiaViteri6', 'LassoGuillermo', 'IvanEspinelM', 'Lenin', 'PacoMoncayo',
                                'ZuquilandaDuque', 'pesanteztwof']

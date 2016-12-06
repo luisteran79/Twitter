@@ -55,11 +55,11 @@ if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
 
     # pass in the username of the account you want to download
-    for p in config.pre_candidate_keywords:
-        get_all_tweets(p)
+    #for p in config.pre_candidate_keywords:
+     #   get_all_tweets(p)
 
-    for p in config.vicepre_candidate_keywords:
-        get_all_tweets(p)
+    #for p in config.vicepre_candidate_keywords:
+     #   get_all_tweets(p)
 
     preDaily.main()
     preMonthly.main()
