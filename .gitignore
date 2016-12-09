@@ -4,9 +4,5 @@ __pycache__/*
 .idea/workspace.xml
 __pycache__/config.cpython-35.pyc
 .idea/misc.xml
-
 .idea/Twitter.iml
-
-.idea/workspace.xml
-
-__pycache__/config.cpython-35.pyc
+*.pyc
