@@ -91,9 +91,10 @@ def read_csv(filename, screen_name):
                         dataByData = create_row(screen_name, curDate.strftime("%Y-%m-%d"), totalTweets, totalRetweets,
                                                 totalFavorites, totalActivities)
                         data.append(dataByData)
-                        if interval.days > 0:
+                        '''if interval.days > 0:
                             nbOfDays = interval.days - 1
                             create_empty_row(data, nbOfDays, screen_name, rowDate)
+                        '''
                         totalTweets = 1
                         totalFavorites = int(row['favorite_count'])
                         totalRetweets = int(row['retweet_count'])
@@ -107,9 +108,11 @@ def read_csv(filename, screen_name):
 
                     if (i == totalRows - 1 and yesterday > rowDate):
                         if (data[len(data)-1][0] != rowDate.strftime("%Y-%m-%d")):
-                            interval = rowDate - curDate
+                            rDate = datetime.datetime.strptime(rowDate.strftime("%Y-%m-%d"), "%Y-%m-%d")
+                            cDate = datetime.datetime.strptime(curDate.strftime("%Y-%m-%d"), "%Y-%m-%d")
+                            interval = rDate - cDate
                             if interval.days > 1:
-                                nbOfDays = interval.days
+                                nbOfDays = interval.days - 1
                                 create_empty_row(data, nbOfDays, screen_name, rowDate)
                             totalActivities = totalTweets + totalRetweets + totalFavorites;
                             dataByData = create_row(screen_name, rowDate.strftime("%Y-%m-%d"), totalTweets, totalRetweets,
@@ -190,3 +193,4 @@ def main():
     # Plot and embed in ipython notebook!
     fig = dict(data=data, layout=layout)
     py.plot(fig, filename='vicepresidential-candidates-monthly-report')
+
