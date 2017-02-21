@@ -14,16 +14,24 @@ api_key='hsa2b84ky3'
 #username='nguyenm'
 #api_key='0d2bs1bakm'
 
-pre_candidate_keywords = ['daloes10', 'CynthiaViteri6', 'LassoGuillermo', 'IvanEspinelM', 'Lenin', 'PacoMoncayo',
-                               'ZuquilandaDuque', 'pesanteztwof']
-pre_candidate_names = ['Dalo Bucaram', 'Cynthia Viteri', 'Guillermo Lasso', 'Iván Espinel', 'Lenin Moreno',
-                       'Paco Moncayo', 'Patricio Zuquilanda', 'Washington Pesántez']
+#pre_candidate_keywords = ['daloes10', 'CynthiaViteri6', 'LassoGuillermo', 'IvanEspinelM', 'Lenin', 'PacoMoncayo',
+#                               'ZuquilandaDuque', 'pesanteztwof']
+#pre_candidate_names = ['Dalo Bucaram', 'Cynthia Viteri', 'Guillermo Lasso', 'Iván Espinel', 'Lenin Moreno',
+#                       'Paco Moncayo', 'Patricio Zuquilanda', 'Washington Pesántez']
 
-vicepre_candidate_keywords = ['ramiroaguilart', 'MauricioPozoEC', 'andrespaezec', 'JorgeGlas', 'MonseBustamant', 'a_alcivar']
-vicepre_candidate_names = ['Ramiro Aguilar', 'Mauricio Pozo', 'Andrés Páez', 'Jorge Glas', 'Monserratt Mustamante', 'Alex Alcivar']
+#vicepre_candidate_keywords = ['ramiroaguilart', 'MauricioPozoEC', 'andrespaezec', 'JorgeGlas', 'MonseBustamant', 'a_alcivar']
+#vicepre_candidate_names = ['Ramiro Aguilar', 'Mauricio Pozo', 'Andrés Páez', 'Jorge Glas', 'Monserratt Mustamante', 'Alex Alcivar']
+#colors = [('rgb(102, 204, 0)'), ('rgb(35, 145, 254)'), ('rgb(255, 153, 51)'), ('rgb(255, 255, 102)'), ('rgb(255, 102, 255)'),
+                       #('rgb(96, 96, 96)'), ('rgb(0, 255, 255)'), ('rgb(0, 0, 255)')]
 
-colors = [('rgb(102, 204, 0)'), ('rgb(35, 145, 254)'), ('rgb(255, 153, 51)'), ('rgb(255, 255, 102)'), ('rgb(255, 102, 255)'),
-                       ('rgb(96, 96, 96)'), ('rgb(0, 255, 255)'), ('rgb(0, 0, 255)')]
+#candidates for second round of Ecuador elections
+pre_candidate_keywords = ['LassoGuillermo', 'Lenin']
+pre_candidate_names = ['Guillermo Lasso', 'Lenin Moreno']
+
+vicepre_candidate_keywords = ['andrespaezec', 'JorgeGlas']
+vicepre_candidate_names = ['Andrés Páez', 'Jorge Glas']
+
+colors = [('rgb(102, 204, 0)'), ('rgb(35, 145, 254)')]
 
 start_date='2016-11-20'
 
